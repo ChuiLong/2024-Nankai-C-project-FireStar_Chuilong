@@ -21,7 +21,8 @@ HEADERS += mainwindow.h \
     monster.h \
     tools.h \
     keys.h \
-    view.h
+    view.h \
+    role.h
 
 RESOURCES += \
     application.qrc

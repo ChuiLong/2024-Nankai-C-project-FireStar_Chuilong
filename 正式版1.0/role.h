@@ -31,4 +31,4 @@ private:
     int crit;
 };
 
-#endif // Role_H
+#endif
