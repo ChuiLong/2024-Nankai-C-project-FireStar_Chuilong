@@ -300,8 +300,8 @@ void MainWindow::slotFight(int num) {       // 模拟战斗并生成具体的战
     while (1) {
         random = qrand() % 99 + 1;
         damage = qMax(player.GetAttack() - monsters[num].GetDefend(), 1);
-        damage += qFloor(damage*0.5*(random >= player.GetCrit()));    // Check if Crit or not
-        monsterHp -= damage * (random > monsters[num].GetMiss());     // Check if Miss or not
+        damage += qFloor(damage*0.5*(random >= player.GetCrit()));
+        monsterHp -= damage * (random > monsters[num].GetMiss());
         if (random <= monsters[num].GetMiss())
             playerMiss++;
         if (random >= player.GetCrit())
@@ -312,8 +312,8 @@ void MainWindow::slotFight(int num) {       // 模拟战斗并生成具体的战
         }
         random = qrand() % 99 + 1;
         damage = qMax(monsters[num].GetAttack() - player.GetDefend(), 1);
-        damage += qFloor(damage*0.5*(random >= monsters[num].GetCrit()));    // Check if Crit or not
-        playerHp -= mode * damage * (random > player.GetMiss());             // Check if Miss or not, also check cheat mode
+        damage += qFloor(damage*0.5*(random >= monsters[num].GetCrit()));
+        playerHp -= mode * damage * (random > player.GetMiss());
         if (random <= player.GetMiss())
             monsterMiss++;
         if (random >= monsters[num].GetCrit())
